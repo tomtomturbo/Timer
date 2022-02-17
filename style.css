@@ -40,13 +40,13 @@ html,body{
     background: linear-gradient(135deg, #14ffe9, #ffffff, #ff00e0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: animate 1.5s linear infinite;   
+    animation: animate 2s linear infinite;   
 }
 @keyframes animate {
     100%{
         filter: hue-rotate(360deg);
 }}
 .date-button{
-    background: linear-gradient(135deg, #9acbf3, #ffffff, #e08181);
-
+    background: linear-gradient(135deg, #14ffe9, #ffffff, #ff00e0);
+    animation: animate 2s linear infinite;
 }

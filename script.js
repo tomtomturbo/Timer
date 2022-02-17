@@ -20,6 +20,13 @@ interval1 = setInterval(
             ":"+
             currentDate.getSeconds().toString().padStart(2,"0")
 
+            document.getElementById("time").innerHTML = 
+            currentDate.getHours().toString().padStart(2,"0")+ // 0 muss ein String sein daher in ""
+            ":"+
+            currentDate.getMinutes().toString().padStart(2,"0")+ 
+            ":"+
+            currentDate.getSeconds().toString().padStart(2,"0")
+
         //setInterval benutzen, um Funktion getCurrentTime() jede Sekunde aufzurufen; danach Funktion getCurrentTime in setInterval hineinpacken
     }
     ,1000
@@ -40,17 +47,11 @@ interval2 = setInterval(
         timerHours = Math.floor((dateTarget/3600)) ;
         timerMinutes = Math.floor((dateTarget/60)) % 60;
         timerSeconds = dateTarget % 60;
-     
-            document.getElementById("timer").innerHTML = 
-            currentDate.getHours().toString().padStart(2,"0")+ 
-            ":"+
-            currentDate.getMinutes().toString().padStart(2,"0")+ 
-            ":"+
-            currentDate.getSeconds().toString().padStart(2,"0")
+
         
             //console.log(timerSeconds)
 
-            document.querySelector("#timer").innerText = `${timerHours}:${timerMinutes}:${timerSeconds}`;
+            document.querySelector("#timer").innerText = `${timerHours.toString().padStart(2,"0")}:${timerMinutes.toString().padStart(2,"0")}:${timerSeconds.toString().padStart(2,"0")}`;
 
             dateTarget--;
 
@@ -65,6 +66,6 @@ interval2 = setInterval(
 document.querySelector(".date-button").addEventListener("click", function(){
     let selectedDate = new Date(document.querySelector(".date-input").value);
     dateTarget = Math.floor((selectedDate-new Date())/1000);
-});
+}); 
 
 
